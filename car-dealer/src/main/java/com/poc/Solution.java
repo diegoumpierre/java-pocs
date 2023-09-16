@@ -1,6 +1,7 @@
 package com.poc;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -16,14 +17,15 @@ public class Solution {
 
         List<Car> resultCarList = new ArrayList<>();
 
-        for (Car car :resultCarList) {
+        for (Car car :carList) {
             if (car.getMiles() < maxMiles && car.getPrice() <= budget){
                 resultCarList.add(car);
             }
         }
 
         //order by price
+        Collections.sort(resultCarList,(car1,car2) -> car1.getPrice().compareTo(car2.getPrice()));
 
-        return carList;
+        return resultCarList;
     }
 }

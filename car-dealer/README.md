@@ -10,12 +10,12 @@ Cars:
     {"maker": "Honda", "model": "Accord", "year": 2015, "price": 10000, "miles": 120000},
     {"maker": "Toyota", "model": "Corolla", "year": 2017, "price": 12000, "miles": 60000},
     {"maker": "Nissan", "model": "Altima", "year": 2019, "price": 18000, "miles": 90000},
-    {"maker": "Chevrolet", "model": "Camaro", "year": 2021, "price": 30000, "miles": 20000},
+    {"maker": "Chevrolet", "model": "Camaro", "year": 2021, "price": 30000, "miles": 20000}
 ]
 ```
 
 Write a function that takes in a list of cars, budget and maximum number of miles, and returns a list of the cars
-that can be purchased with the given budget and that have less miles than requested . The list should be sorted by
+that can be purchased with the given budget and that has fewer miles than requested. The list should be sorted by
 price from lowest to highest.
 
 
