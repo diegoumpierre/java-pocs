@@ -11,18 +11,18 @@ import static org.junit.jupiter.api.Assertions.*;
  * @since Sep 12 2023
  */
 class SolutionTest {
-    private Solution basicStructure;
+    private Solution solution;
     @BeforeEach
     void init(){
-        basicStructure = new Solution();
+        solution = new Solution();
     }
     @Test
     void ifTheParameterAreBiggerThenTwoShouldReturnTrue() {
-        assertTrue(basicStructure.basicMethod(4));
+        assertTrue(solution.basicMethod(4));
     }
     @Test
     void ifTheParameterAreLessThenTwoShouldReturnFalse() {
-        assertFalse(basicStructure.basicMethod(1));
+        assertFalse(solution.basicMethod(1));
     }
 
 }
