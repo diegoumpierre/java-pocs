@@ -49,7 +49,9 @@ public class Solution {
                     if (!permitedSinal.get(lastOpen).equals(letter)){
                         return false;
                     }else{
-                        signalList = Arrays.copyOf(signalList, signalList.length-1);
+                        ArrayList.po
+                        signalList.
+                        signalList.pop();
 
                     }
                 }

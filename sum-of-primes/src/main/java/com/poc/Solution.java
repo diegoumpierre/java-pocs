@@ -30,13 +30,6 @@ public class Solution {
     }
 
 
-    public void consecutivePrimes(int p, List<Integer> primeNumbers){
-
-
-
-
-    }
-
     private void loadPrimeNumbers(int p){
         for(int i=2; i <= p; i++){
             if (isPrime(i)){
