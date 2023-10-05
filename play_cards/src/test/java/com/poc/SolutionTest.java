@@ -25,16 +25,27 @@ class SolutionTest {
 
     @Test
     public void correctParsesEight() {
-        assertEquals(solution.parseCard("eight"),8);
+        assertEquals(8, solution.parseCard("eight"));
     }
 
     @Test
     public void correctParsesAce() {
-        assertEquals(solution.parseCard("ace"),11);
+        assertEquals(11,solution.parseCard("ace"));
     }
 
     @Test
     public void correctParsesTen() {
-        assertEquals(solution.parseCard("ten"),10);
+        assertEquals(10,solution.parseCard("ten"));
+    }
+
+
+    @Test
+    public void firstTurnWithAceKingAndDealerQueen() {
+        assertEquals("S",solution.firstTurn("ace", "king", "queen"));
+    }
+
+    @Test
+    public void firstTurnWithKingSevenAndDealerAce() {
+        assertEquals("S",solution.firstTurn("king", "seven", "ace"));
     }
 }

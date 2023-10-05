@@ -3,16 +3,12 @@ package com.poc;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * The proposal for the class it is show the basic structure.
- *
- * @author diegoUmpierre
- * @since Sep 12 2023
- */
 public class Solution {
-    Map<String,Integer> cards = new HashMap<String,Integer>();
 
-    private void setup(){
+    static Map<String,Integer> cards;
+
+    static {
+        cards = new HashMap<String,Integer>();
         cards.put("ace",11);
         cards.put("two",2);
         cards.put("three",3);
@@ -27,15 +23,13 @@ public class Solution {
         cards.put("queen",10);
         cards.put("king",10);
         cards.put("other",0);
-    }
+    };
 
     public int parseCard(String card) {
-        setup();
         return cards.get(card);
     }
 
     public boolean isBlackjack(String card1, String card2) {
-        setup();
 
         if ("ace".equals(card1) && "ace".equals(card2 ) ) return false;
 
@@ -45,13 +39,12 @@ public class Solution {
 
     }
     public String largeHand(boolean isBlackjack, int dealerScore) {
-        setup();
-
-        if (isBlackjack && !(dealerScore == cards.get("ace")) || (dealerScore == cards.get("ten")) ) return "W";
-        else return "S";
+            if (isBlackjack && !(dealerScore > 9)) return "W";
+            else return "S";
     }
 
     public String smallHand(int handScore, int dealerScore) {
+        if (handScore >= 17) return "S";
         if (handScore >= 12 && handScore <= 16 &&  dealerScore < 7) return "S";
         else return "H";
 
@@ -75,3 +68,4 @@ public class Solution {
         }
     }
 }
+
