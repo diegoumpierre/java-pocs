@@ -2,12 +2,6 @@ package com.poc;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -36,9 +30,11 @@ class SolutionTest {
     @Test
     public void testOrangeColorCode() {
         assertEquals(3,solution.colorCode("orange"));
-
     }
 
-
-
+    @Test
+    public void testColors() {
+        String[] expected = {"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"};
+        assertArrayEquals(expected,solution.colors());
+    }
 }

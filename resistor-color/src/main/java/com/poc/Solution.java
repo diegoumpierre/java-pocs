@@ -1,7 +1,6 @@
 package com.poc;
 
-import java.util.HashMap;
-import java.util.Map;
+
 
 
 /**
@@ -12,26 +11,27 @@ import java.util.Map;
  */
 public class Solution {
 
-    Map<String,Integer> colors = new HashMap<>();
-
-    private void setup(){
-        colors.put("black",0);
-        colors.put("brown",1);
-        colors.put("red",2);
-        colors.put("orange",3);
-        colors.put("yellow",4);
-        colors.put("green",5);
-        colors.put("blue",6);
-        colors.put("violet",7);
-        colors.put("grey",8);
-        colors.put("white",9);
+    int colorCode(String color) {
+        String[] colorList = colors();
+        for (int i=0;i<colorList.length;i++){
+            if (color.equals(colorList[i])) return i;
+        }
+        return -1;
     }
 
+    String[] colors() {
+        String[] colorList = new String[10];
+        colorList[0] = "black";
+        colorList[1] = "brown";
+        colorList[2] = "red";
+        colorList[3] = "orange";
+        colorList[4] = "yellow";
+        colorList[5] = "green";
+        colorList[6] = "blue";
+        colorList[7] = "violet";
+        colorList[8] = "grey";
+        colorList[9] = "white";
 
-
-
-   public int colorCode(String color) {
-        setup();
-        return colors.get(color);
+        return colorList;
     }
 }
