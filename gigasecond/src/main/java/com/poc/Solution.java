@@ -25,7 +25,7 @@ public class Solution {
     }
 
 
-    public void calculateGigaSecond() throws ParseException {
+    public Date calculateGigaSecond(Date startDate) throws ParseException {
 
         //gigasecond == thousand million seconds
         Long addSeconds = 10000000000L;
@@ -34,13 +34,15 @@ public class Solution {
         // then you would be a gigasecond old on
         // October 2nd, 2046 at 23:46:40 (11:46:40pm).
 
-
         final String dateStr = "2015-01-24 22:00:00";
         final DateFormat df = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss", Locale.ENGLISH);
         final Date date = df.parse(dateStr);
 
+
         System.out.println(date.toString());
 
+
+        return null;
     }
 
 
