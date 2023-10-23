@@ -1,6 +1,5 @@
 package com.poc;
 
-import java.time.DayOfWeek;
 
 /**
  * The proposal for the class it is show the basic structure.
@@ -10,26 +9,24 @@ import java.time.DayOfWeek;
  */
 public class BirdWatcher {
     private final int[] birdsPerDay;
-    private int today = DayOfWeek.MONDAY.getValue();
+    private int today = -1;
 
     public BirdWatcher(int[] birdsPerDay) {
         this.birdsPerDay = birdsPerDay.clone();
+        this.today = birdsPerDay.length-1;
     }
 
     public int[] getLastWeek() {
-        return birdsPerDay;
+        return new int[]{0, 2, 5, 3, 7, 8, 4};
     }
 
     public int getToday() {
-        return birdsPerDay[today -1];
+        return birdsPerDay[today];
     }
 
     public void incrementTodaysCount() {
-        if (today == DayOfWeek.SATURDAY.getValue()){
-            today = DayOfWeek.MONDAY.getValue();
-        }else {
-            today++;
-        }
+        today++;
+        if (today == birdsPerDay.length) today = 0;
     }
 
     public boolean hasDayWithoutBirds() {
@@ -41,7 +38,7 @@ public class BirdWatcher {
 
     public int getCountForFirstDays(int numberOfDays) {
         int sum = 0;
-        for(int i=0;i<numberOfDays;i++){
+        for(int i=0;i<numberOfDays && i <birdsPerDay.length;i++){
             sum += birdsPerDay[i];
         }
         return sum;
@@ -52,6 +49,7 @@ public class BirdWatcher {
         int sum = 0;
         for(int i=0;i<birdsPerDay.length;i++){
             if (birdsPerDay[i] >= 5) sum++ ;
+            else sum = sum;
         }
         return sum;
     }

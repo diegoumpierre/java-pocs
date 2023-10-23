@@ -27,7 +27,7 @@ class BirdWatcherTest {
     void howManyBirdsVisitTodayShouldBeSuccess(){
         int[] birdsPerDay = { 2, 5, 0, 7, 4, 1 };
         birdWatcher = new BirdWatcher(birdsPerDay);
-        assertEquals(2,birdWatcher.getToday());
+        assertEquals(1,birdWatcher.getToday());
     }
 
     @Test
@@ -39,7 +39,7 @@ class BirdWatcherTest {
         birdWatcher.incrementTodaysCount();
         birdWatcher.incrementTodaysCount();
 
-        assertEquals(4,birdWatcher.getToday());
+        assertEquals(7,birdWatcher.getToday());
     }
 
     @Test
@@ -53,7 +53,7 @@ class BirdWatcherTest {
         birdWatcher.incrementTodaysCount();
         birdWatcher.incrementTodaysCount();
 
-        assertEquals(2,birdWatcher.getToday());
+        assertEquals(1,birdWatcher.getToday());
     }
 
 
