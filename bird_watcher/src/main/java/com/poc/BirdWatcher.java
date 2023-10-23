@@ -47,7 +47,12 @@ public class BirdWatcher {
         return sum;
     }
 
+    //Some days are busier that others. A busy day is one where five or more birds have visited your garden.
     public int getBusyDays() {
-        throw new UnsupportedOperationException("Please implement the BirdCount.getBusyDays() method");
+        int sum = 0;
+        for(int i=0;i<birdsPerDay.length;i++){
+            if (birdsPerDay[i] >= 5) sum++ ;
+        }
+        return sum;
     }
 }

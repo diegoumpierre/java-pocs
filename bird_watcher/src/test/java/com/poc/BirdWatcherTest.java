@@ -1,12 +1,6 @@
 package com.poc;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -82,6 +76,13 @@ class BirdWatcherTest {
         int[] birdsPerDay ={ 2, 5, 0, 7, 4, 1 };
         birdWatcher = new BirdWatcher(birdsPerDay);
         assertEquals(14,birdWatcher.getCountForFirstDays(4));
+    }
+
+    @Test
+    void busyDaysShouldSucess() {
+        int[] birdsPerDay ={ 2, 5, 0, 7, 4, 6 };
+        birdWatcher = new BirdWatcher(birdsPerDay);
+        assertEquals(3,birdWatcher.getBusyDays());
     }
 
 
