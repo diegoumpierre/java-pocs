@@ -39,7 +39,7 @@ class BirdWatcherTest {
         birdWatcher.incrementTodaysCount();
         birdWatcher.incrementTodaysCount();
 
-        assertEquals(7,birdWatcher.getToday());
+        assertEquals(5,birdWatcher.getToday());
     }
 
     @Test
@@ -53,7 +53,7 @@ class BirdWatcherTest {
         birdWatcher.incrementTodaysCount();
         birdWatcher.incrementTodaysCount();
 
-        assertEquals(1,birdWatcher.getToday());
+        assertEquals(7,birdWatcher.getToday());
     }
 
 

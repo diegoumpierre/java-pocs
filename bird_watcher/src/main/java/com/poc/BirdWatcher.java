@@ -25,8 +25,7 @@ public class BirdWatcher {
     }
 
     public void incrementTodaysCount() {
-        today++;
-        if (today == birdsPerDay.length) today = 0;
+        birdsPerDay[today] = getToday() + 1;
     }
 
     public boolean hasDayWithoutBirds() {
