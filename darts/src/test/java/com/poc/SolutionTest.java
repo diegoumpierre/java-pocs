@@ -45,6 +45,10 @@ class SolutionTest {
         assertEquals(10, solution.darts(0,1));
     }
 
+    @Test
+    void dartLandsCenter() {
+        assertEquals(10, solution.darts(0,0));
+    }
 
 
 }

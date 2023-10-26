@@ -26,13 +26,11 @@ the middle circle a radius of 5 units, and the inner circle a radius of 1.
     public int darts(double x, double y){
         double distance = sqrt((x*x) + (y*y));
 
-        //if (distance > outerCircle) return 0;
-
         if (distance > middleCircle && distance <= outerCircle) return 1;
 
         if (distance > innerCircle && distance <= middleCircle) return 5;
 
-        if (distance > 0 && distance <= innerCircle) return 10;
+        if (distance >= 0 && distance <= innerCircle) return 10;
 
         return 0;
     }
