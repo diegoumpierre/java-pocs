@@ -21,6 +21,7 @@ public class Solution {
         letterValues.put("K",5);
         letterValues.put("JX",8);
         letterValues.put("QZ",10);
+
     }
 
 
