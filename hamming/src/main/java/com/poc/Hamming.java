@@ -7,11 +7,23 @@ package com.poc;
  * @since Sep 12 2023
  */
 public class Hamming {
+
+    private int hammingDistance = 0;
+
     public Hamming(String leftStrand, String rightStrand) {
-        return;
+        hammingDistance = 0;
+        if (leftStrand == null || rightStrand == null
+               || (leftStrand.length() != rightStrand.length())){
+            throw new IllegalArgumentException("strands must be of equal length");
+        }
+        for(int i=0; i<leftStrand.length();i++){
+            if (leftStrand.charAt(i) != rightStrand.charAt(i)){
+                hammingDistance ++;
+            }
+        }
     }
 
     public int getHammingDistance() {
-        return 0;
+        return hammingDistance;
     }
 }
