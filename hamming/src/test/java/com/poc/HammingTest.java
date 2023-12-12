@@ -1,6 +1,8 @@
 package com.poc;
 
+import org.junit.Rule;
 import org.junit.jupiter.api.Test;
+import org.junit.rules.ExpectedException;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
@@ -12,6 +14,10 @@ import static org.junit.Assert.assertEquals;
  * @since Sep 12 2023
  */
 class HammingTest {
+
+    @Rule
+    public ExpectedException expectedEx = ExpectedException.none();
+
     @Test
     public void testNoDistanceBetweenEmptyStrands() {
         Hamming hamming = new Hamming("","");
@@ -45,32 +51,33 @@ class HammingTest {
 
     @Test
     public void testValidatesFirstStrandNotLonger() {
-        assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> new Hamming("AATG", "AAA"))
-                .withMessage("strands must be of equal length");
+        expectedEx.expect(IllegalArgumentException.class);
+        expectedEx.expectMessage("strands must be of equal length");
+        Hamming hamming = new Hamming("AATG","AAA");
     }
 
     @Test
     public void testValidatesSecondStrandNotLonger() {
-        assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> new Hamming("ATA", "AGTG"))
-                .withMessage("strands must be of equal length");
+
+        expectedEx.expect(IllegalArgumentException.class);
+        expectedEx.expectMessage("strands must be of equal length");
+        Hamming hamming = new Hamming("ATA","AGTG");
+
     }
 
     @Test
     public void testDisallowLeftEmptyStrand() {
-        assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> new Hamming("", "G"))
-                .withMessage("strands must be of equal length");
+        expectedEx.expect(IllegalArgumentException.class);
+        expectedEx.expectMessage("strands must be of equal length");
+        Hamming hamming = new Hamming("","G");
+
     }
 
     @Test
     public void testDisallowRightEmptyStrand() {
-        assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> new Hamming("G", ""))
-                .withMessage("strands must be of equal length");
-    }ThenTwoShouldReturnFalse() {
-        assertFalse(solution.basicMethod(1));
+        expectedEx.expect(IllegalArgumentException.class);
+        expectedEx.expectMessage("strands must be of equal length");
+        Hamming hamming = new Hamming("G", "");
     }
 
 }
