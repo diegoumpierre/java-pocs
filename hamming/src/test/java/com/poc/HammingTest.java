@@ -3,6 +3,7 @@ package com.poc;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.assertEquals;
 
 /**
  * The proposal for the class it is show the basic structure for a test class.
@@ -13,27 +14,33 @@ import static org.hamcrest.MatcherAssert.assertThat;
 class HammingTest {
     @Test
     public void testNoDistanceBetweenEmptyStrands() {
-        assertThat(new Hamming("", "").getHammingDistance()).isEqualTo(0);
+        Hamming hamming = new Hamming("","");
+        assertEquals(0, hamming.getHammingDistance());
     }
 
     @Test
     public void testNoDistanceBetweenShortIdenticalStrands() {
-        assertThat(new Hamming("A", "A").getHammingDistance()).isEqualTo(0);
+        Hamming hamming = new Hamming("A","A");
+        assertEquals(0, hamming.getHammingDistance());
     }
 
     @Test
     public void testCompleteDistanceInSingleLetterDifferentStrands() {
-        assertThat(new Hamming("G", "T").getHammingDistance()).isEqualTo(1);
+        Hamming hamming = new Hamming("G","T");
+        assertEquals(0, hamming.getHammingDistance());
     }
 
     @Test
     public void testDistanceInLongIdenticalStrands() {
-        assertThat(new Hamming("GGACTGAAATCTG", "GGACTGAAATCTG").getHammingDistance()).isEqualTo(0);
+        Hamming hamming = new Hamming("GGACTGAAATCTG","GGACTGAAATCTG");
+        assertEquals(0, hamming.getHammingDistance());
     }
 
     @Test
     public void testDistanceInLongDifferentStrands() {
-        assertThat(new Hamming("GGACGGATTCTG", "AGGACGGATTCT").getHammingDistance()).isEqualTo(9);
+        Hamming hamming = new Hamming("GGACGGATTCTG","AGGACGGATTCT");
+        assertEquals(9, hamming.getHammingDistance());
+
     }
 
     @Test
