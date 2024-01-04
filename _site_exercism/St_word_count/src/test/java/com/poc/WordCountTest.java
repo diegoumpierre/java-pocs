@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * The proposal for the class it is show the basic structure for a test class.
  *
  * @author diegoUmpierre
- * @since Sep 12 2023
+ * @since Jan 04 2024
  */
 public class WordCountTest {
     private WordCount wordCount;
