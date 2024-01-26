@@ -23,7 +23,7 @@ import static org.mockito.Mockito.when;
  * The proposal for the class it is show the basic structure for a test class.
  *
  * @author diegoUmpierre
- * @since Sep 12 2023
+ * @since Jan 12 2024
  */
 class SolutionTest {
     private Solution solution;
